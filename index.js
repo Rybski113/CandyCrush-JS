@@ -1,17 +1,19 @@
 
 
 
-const main = (
+
+const simplePage = (
     <div>
-        <h1>Sample Page</h1>
-        <h4>Top Section</h4>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-        </ul>
+       <h1>Fun facts about React</h1>
+       <ul>
+        <li>Was first released in 2013</li>
+        <li>Was originally created by Jordan Walke</li>
+        <li>Has well over 100K start on Github</li>
+        <li>Is maintained by Facebook</li>
+        <li>Power thousands of entrprise apps, including mobile apps</li>
+       </ul>
     </div>
+    
 )
 
-ReactDOM.render(main, document.getElementById("root"))
-
+ReactDOM.render(simplePage, document.getElementById("root"))
