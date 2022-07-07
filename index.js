@@ -1,12 +1,17 @@
-const navbar = (
-    <nav>
-        <h1>Brand Name</h1>
+
+
+
+const main = (
+    <div>
+        <h1>Sample Page</h1>
+        <h4>Top Section</h4>
         <ul>
-            <li>Pricing</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
         </ul>
-    </nav>
+    </div>
 )
 
-ReactDOM.render(navbar, document.getElementById("root"))
+ReactDOM.render(main, document.getElementById("root"))
+
