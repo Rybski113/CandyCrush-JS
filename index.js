@@ -1,10 +1,10 @@
-ReactDOM.render(
-    <p>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-        </ul>
-    </p>
-    , document.getElementById("root"))
+ReactDOM.render(<h1 className = "header">Hello React</h1> , document.getElementById("root"))
+
+
+
+
+//const h1 = document.createElement("h1")
+
+//h1.textContent = "This is the imperative way"
+//h1.className = "header"
+//document.getElementById('root').append(h1)
