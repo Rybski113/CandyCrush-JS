@@ -2,8 +2,12 @@
 
 
 
-const simplePage = (
-    <div>
+
+
+function TemporaryName() {
+    return (
+
+        <div>
        <h1>Fun facts about React</h1>
        <ul>
         <li>Was first released in 2013</li>
@@ -13,7 +17,7 @@ const simplePage = (
         <li>Power thousands of entrprise apps, including mobile apps</li>
        </ul>
     </div>
-    
-)
+    )
+}
 
-ReactDOM.render(simplePage, document.getElementById("root"))
+ReactDOM.render(<TemporaryName/>, document.getElementById("root"))
