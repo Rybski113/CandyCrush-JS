@@ -97,9 +97,44 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+
+    // check row and column of four
+
+    function checkRowForFour() {
+        for (i = 0; i < 61; i++) {
+            let rowOfFour = [i, i+1, i+2,i+3];
+            let decidedColor = squares[i].style.backgroundColor;
+            const isBlank = squares[i].style.backgroundColor === '';
+
+            if(rowOfFour.every(index => squares[index].style.backgroundColor === decidedColor && !isBlank)) {
+                     score += 3
+                     rowOfFour.forEach(index => {
+                     squares[index].style.backgroundColor = '';
+                })
+            }
+        }
+    }
+
+    
+    function checkColumnForFour() {
+        for (i = 0; i < 47; i++) {
+            let columnOfFour = [i, i+width, i+width * 2, i+width * 3];
+            let decidedColor = squares[i].style.backgroundColor;
+            const isBlank = squares[i].style.backgroundColor === '';
+
+            if(columnOfFour.every(index => squares[index].style.backgroundColor === decidedColor && !isBlank)) {
+                     score += 3
+                     columnOfFour.forEach(index => {
+                     squares[index].style.backgroundColor = '';
+                })
+            }
+        }
+    }
   
 
     window.setInterval(function(){
+        checkRowForFour()
+        checkColumnForFour()
         checkRowForThree()
         checkColumnForThree()
     }, 100)
