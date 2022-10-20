@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(this.id, 'dragdrop')
     colorBeingReplaced = this.style.backgroundColor;
     squareIdBeingReplaced = parseInt(this.id);
+    this.style.backgroundColor = colorBeingDragged;
     squares[squareIdBeingDragged].style.backgroundColor = colorBeingReplaced
    }
  
