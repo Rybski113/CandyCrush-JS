@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else  squares[squareIdBeingDragged].style.backgroundColor = colorBeingDragged;
    }
 
-   //Checking for matches 
+    //Checking for matches 
     //check for row of Three
     function checkRowForThree() {
         for (i = 0; i < 61; i++) {
@@ -81,9 +81,28 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
-   // checkRowForThree()
 
-    window.setInterval(checkRowForThree, 500)
+    //check for column of three
+    function checkColumnForThree() {
+        for (i = 0; i < 47; i++) {
+            let columnOfThree = [i, i+width, i+width *2];
+            let decidedColor = squares[i].style.backgroundColor;
+            const isBlank = squares[i].style.backgroundColor === '';
+
+            if(columnOfThree.every(index => squares[index].style.backgroundColor === decidedColor && !isBlank)) {
+                     score += 3
+                     columnOfThree.forEach(index => {
+                     squares[index].style.backgroundColor = '';
+                })
+            }
+        }
+    }
+  
+
+    window.setInterval(function(){
+        checkRowForThree()
+        checkColumnForThree()
+    }, 100)
 
 
 
