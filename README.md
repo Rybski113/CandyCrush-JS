@@ -3,6 +3,7 @@
 In addition to this, I've been practising using inbuilt methods such as:
 
 addEventListener()
+-
 setAttribute()
 setInterval()
 some()
