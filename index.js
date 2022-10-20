@@ -64,6 +64,18 @@ document.addEventListener('DOMContentLoaded', () => {
         squares[squareIdBeingDragged].style.backgroundColor = colorBeingDragged;
     } else  squares[squareIdBeingDragged].style.backgroundColor = colorBeingDragged;
    }
+   // drop candies ance some have been cleared
+
+   function moveDown() {
+       for (i = 0; i < 55; i++) {
+        if(squares[i + width].style.backgroundColor === '') {
+            squares[i + width].style.backgroundColor = squares[i].style.backgroundColor;
+            squares[i].style.backgroundColor = '';
+        }
+       }
+   }
+
+
 
     //Checking for matches 
     //check for row of Three
@@ -133,6 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
 
     window.setInterval(function(){
+        moveDown()
         checkRowForFour()
         checkColumnForFour()
         checkRowForThree()
