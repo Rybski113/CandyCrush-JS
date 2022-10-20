@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
    ];
 
    function createBoard() {
-    for ( let i = 0; i < 64; i++ ){
+    for ( let i = 0; i < width * width; i++ ){
        const square = document.createElement('div');
        square.setAttribute('draggable', true);
        square.setAttribute('id', i);
@@ -25,6 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
    createBoard();
 
+   let colorBeingDragged;
+   let colorBeingReplaced;
+   let squareIdBeingDragged;
+   let squareIdBeingReplaced;
+
+
    squares.forEach(square => square.addEventListener('dragstart', dragStart));
    squares.forEach(square => square.addEventListener('dragend', dragEnd));
    squares.forEach(square => square.addEventListener('dragover', dragOver));
@@ -34,15 +40,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
    function dragStart() {
+    colorBeingDragged = this.style.backgroundColor;
+    squareIdBeingDragged = parseInt(this.id);
+     console.log(colorBeingDragged);
      console.log(this.id, 'dragstart')
    }
    function dragEnd() {
     console.log(this.id, 'dragend')
    }
-   function dragOver() {
+   function dragOver(e) {
+    e.preventDefault()
     console.log(this.id, 'dragover')
    }
    function dragEnter() {
+    e.preventDefault()
     console.log(this.id, 'dragenter')
    }
    function dragLeave() {
@@ -50,6 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
    }
    function dragDrop() {
     console.log(this.id, 'dragdrop')
+    colorBeingReplaced = this.style.backgroundColor;
+    squareIdBeingReplaced = parseInt(this.id);
+    squares[squareIdBeingDragged].style.backgroundColor = colorBeingReplaced
    }
  
 
