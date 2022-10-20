@@ -2,9 +2,8 @@
 
 In addition to this, I've been practising using inbuilt methods such as:
 
-addEventListener()
--
-setAttribute()
+<p>addEventListener()</p>
+<p>setAttribute()</p>
 setInterval()
 some()
 every()
