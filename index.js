@@ -71,6 +71,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if(squares[i + width].style.backgroundColor === '') {
             squares[i + width].style.backgroundColor = squares[i].style.backgroundColor;
             squares[i].style.backgroundColor = '';
+            const firstRow = [1, 2, 3, 4, 5, 6, 7]
+            const isFirstRow = firstRow.includes(i)
+            if (isFirstRow && squares[i].style.backgroundColor === '') {
+                let randomColor = Math.floor(Math.random() * candyColors.length);
+                squares[i].style.backgroundColor = candyColors[randomColor];
+            }
         }
        }
    }
